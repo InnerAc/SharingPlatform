@@ -10,6 +10,9 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.jfinal.render.ViewType;
 
+import edu.hhu.share.controller.SWYSController;
+import edu.hhu.share.entities.SWYS;
+
 public class ShareConfig extends JFinalConfig {
 
 	@Override
@@ -20,10 +23,16 @@ public class ShareConfig extends JFinalConfig {
 
 	@Override
 	public void configRoute(Routes me) {
+		me.add("/swyswh", SWYSController.class);
 	}
 
 	@Override
 	public void configPlugin(Plugins me) {
+		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://192.168.5.130/splatform","root", "anjicun");
+		me.add(cp);
+		ActiveRecordPlugin arp = new ActiveRecordPlugin(cp);
+		arp.addMapping("SWYSB", "YSDM", SWYS.class);
+		me.add(arp);
 	}
 
 	@Override
