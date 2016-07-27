@@ -47,6 +47,11 @@ public class SWYS extends Model<SWYS>{
 		return this;
 	}
 	
+	public boolean drop(String ysdm){
+		SWYS swys = SWYS.dao.findById(ysdm);
+		return swys.delete();
+	}
+	
 	public List<SWYS> findAll(){
 		List<SWYS> sysyss = find("select * from SWYSB");
 		return sysyss;
