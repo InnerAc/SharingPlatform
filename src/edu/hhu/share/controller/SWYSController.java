@@ -12,20 +12,21 @@ import com.jfinal.kit.JsonKit;
 
 import edu.hhu.share.entities.SWYS;
 
+/**
+ * 水文要素维护和资费维护的控制器
+ * @author Jicun
+ *
+ */
 public class SWYSController extends Controller{
 
 	public void index(){
 		setAttr("swyss", SWYS.dao.findAll());
 		render("/view/swys.jsp");
 	}
-//	public void select(){
-//		String testString = "[{\"RQZD2\":\"2016-07-25\",\"RQZD1\":\"2016-07-24\",\"YSNR\":\" (STCD,DT,AVZ)\",\"YSMC\":\"日平均水位\",\"YSDM\":\"0202\",\"BM\":\"HY_DZ_C\",\"LX\":\"1\",\"ZF\":201.0}]";
-////		SWYS swys = JsonKit.parse(testString, SWYS.class);
-//		List<SWYS> swyss = JSON.parseArray(testString,SWYS.class);
-//		for(SWYS swys: swyss){
-//			swys.turnDB().update();
-//		}
-//	}
+	public void zf(){
+		setAttr("swyss", SWYS.dao.findAll());
+		render("/view/zf.jsp");
+	}
 	/**
 	 * 修改单行数据
 	 */
@@ -56,7 +57,7 @@ public class SWYSController extends Controller{
 	}
 	
 	/**
-	 * 得到说有的数据
+	 * 得到所有的数据
 	 */
 	public void jsonAll(){
 		renderJson(SWYS.dao.findAll());

@@ -46,7 +46,7 @@ function i_save(e){
 			var text = input.val();
 			var name = input.attr('name');
 			item[name] = text;
-			$(this).html('<td edit="true">'+text+'</td>');
+			$(this).html('<td edit="true" name="'+name+'">'+text+'</td>');
 		}
 		if($(this).attr('name') == 'ZF'){
 			var text = $(this).text();
@@ -115,8 +115,9 @@ function i_reload(e){
 		var input = $(this).children();
 		if(input.is('input')){
 			var text = input.attr('value');
+			var name = input.attr('name');
 			console.log(text);
-			$(this).html('<td edit="true">'+text+'</td>');
+			$(this).html('<td edit="true" name="'+name+'">'+text+'</td>');
 		}
 		if(input.is('button')){
 			$(this).html('<button onclick="i_edit(this);">编辑</button>\n<button onclick="i_drop(this)">删除</button>')
@@ -164,7 +165,9 @@ function i_add(){
 	var div = $('#new_item');
 	var oldhtml = div.html();
 	var newItem = '\n<tr>\n			<td edit="true" name="YSDM"></td>\n			<td edit="true" name="YSMC"></td>\n			<td edit="true" name="BM"></td>\n			<td edit="true" name="YSNR"></td>\n			<td edit="true" name="RQZD1"></td>\n			<td edit="true" name="RQZD2"></td>\n			<td edit="true" name="LX"></td>\n			<td edit="false" name="ZF">0.0</td>\n			<td edit="btn">\n	        	<button onclick="i_edit(this);">编辑</button>\n	        	<button onclick="i_drop(this)">删除</button>\n			</td>\n        </tr>';
-	div.html(oldhtml+newItem);
+//	div.html('');
+//	div.html(oldhtml+newItem);
+	div.append(newItem);
 	var div = $('#new_item');
 	var tr = div.find('tr').last();
 	i_edit(tr);
