@@ -26,7 +26,7 @@ function zf_save(e){
 			var text = input.val();
 			var name = input.attr('name');
 			item[name] = text;
-			$(this).html('<td edit="true" name="'+name+'">'+text+'</td>');
+			$(this).html(name);
 		}
 		if($(this).attr('edit') == 'false'){
 			var text = $(this).text();
@@ -45,6 +45,9 @@ function zf_save(e){
 	    dataType:"json",
 	    url: "/swyswh/commit/",
 	    data:{'swys':item},
+	    success : function(data,stau){
+	    	alert(data['res']);
+	    }
 	});
 }
 
@@ -57,7 +60,7 @@ function zf_reload(e){
 			var text = input.attr('value');
 			var name = input.attr('name');
 			console.log(text);
-			$(this).html('<td edit="true" name="'+name+'">'+text+'</td>');
+			$(this).html(name);
 		}
 		if(input.is('button')){
 			$(this).html('<button onclick="zf_edit(this);">修改</button>')

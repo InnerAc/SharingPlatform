@@ -34,7 +34,7 @@ public class SWYSController extends Controller{
 		String mData=getPara("swys");
 		SWYS swys = JSON.parseObject(mData,SWYS.class);
 		swys.turnDB().update();
-		renderText("success");
+		renderJson("{\"res\":\"修改成功\"}");
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class SWYSController extends Controller{
 		String mData=getPara("swys");
 		SWYS swys = JSON.parseObject(mData,SWYS.class);
 		swys.turnDB().save();
-		renderText("success");
+		renderJson("{\"res\":\"插入成功\"}");
 	}
 	
 	/**
@@ -53,7 +53,7 @@ public class SWYSController extends Controller{
 	public void drop(){
 		String ysdm = getPara("swys");
 		SWYS.dao.drop(ysdm);
-		renderText("success");
+		renderJson("{\"res\":\"删除成功\"}");
 	}
 	
 	/**

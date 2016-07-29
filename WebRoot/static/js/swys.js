@@ -46,9 +46,9 @@ function i_save(e){
 			var text = input.val();
 			var name = input.attr('name');
 			item[name] = text;
-			$(this).html('<td edit="true" name="'+name+'">'+text+'</td>');
+			$(this).html(text);
 		}
-		if($(this).attr('name') == 'ZF'){
+		if($(this).attr('edit') == 'false'){
 			var text = $(this).text();
 			var name = $(this).attr('name');
 			item[name] = text;
@@ -65,6 +65,9 @@ function i_save(e){
 	    dataType:"json",
 	    url: "/swyswh/commit/",
 	    data:{'swys':item},
+	    success : function(data,stau){
+	    	alert(data['res']);
+	    },
 	});
 }
 
@@ -82,7 +85,10 @@ function i_insert(e){
 			var text = input.val();
 			var name = input.attr('name');
 			item[name] = text;
-			$(this).html('<td edit="true">'+text+'</td>');
+			$(this).html(text);
+			if(input.attr('name') == 'YSDM'){
+				$(this).attr('edit','false');
+			}
 		}
 		if($(this).attr('name') == 'ZF'){
 			var text = $(this).text();
@@ -101,6 +107,9 @@ function i_insert(e){
 	    dataType:"json",
 	    url: "/swyswh/add/",
 	    data:{'swys':item},
+	    success : function(data,stau){
+	    	alert(data['res']);
+	    }
 	});
 }
 
@@ -117,7 +126,7 @@ function i_reload(e){
 			var text = input.attr('value');
 			var name = input.attr('name');
 			console.log(text);
-			$(this).html('<td edit="true" name="'+name+'">'+text+'</td>');
+			$(this).html(text);
 		}
 		if(input.is('button')){
 			$(this).html('<button onclick="i_edit(this);">编辑</button>\n<button onclick="i_drop(this)">删除</button>')
@@ -143,7 +152,7 @@ function i_drop(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	tr.find('td').each(function (){
-		if($(this).attr('edit') == "true" & $(this).attr('name') == 'YSDM'){
+		if($(this).attr('name') == 'YSDM'){
 			var text = $(this).text();
 			$.ajax({
 			    type: "POST",
@@ -151,6 +160,9 @@ function i_drop(e){
 			    dataType:"json",
 			    url: "/swyswh/drop/",
 			    data:{'swys':text},
+			    success : function(data,stau){
+			    	alert(data['res']);
+			    }
 			});
 			console.log("delete "+text);
 		} 

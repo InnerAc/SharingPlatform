@@ -33,7 +33,7 @@
       <tbody  id="new_item">
       	<c:forEach items="${swyss}" var="swys">
         <tr>
-			<td edit="true" name="YSDM">${swys.YSDM }</td>
+			<td edit="false" name="YSDM">${swys.YSDM }</td>
 			<td edit="true" name="YSMC">${swys.YSMC }</td>
 			<td edit="true" name="BM">${swys.BM }</td>
 			<td edit="true" name="YSNR">${swys.YSNR }</td>

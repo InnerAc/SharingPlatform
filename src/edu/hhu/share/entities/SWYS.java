@@ -53,7 +53,12 @@ public class SWYS extends Model<SWYS>{
 	}
 	
 	public List<SWYS> findAll(){
-		List<SWYS> sysyss = find("select * from SWYSB");
+		List<SWYS> sysyss = null;
+		try {
+			sysyss = find("select * from SWYSB");
+		} catch (Exception e) {
+			sysyss = null;
+		}
 		return sysyss;
 	}
 }
