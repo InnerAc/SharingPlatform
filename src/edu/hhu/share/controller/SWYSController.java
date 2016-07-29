@@ -33,8 +33,12 @@ public class SWYSController extends Controller{
 	public void commit(){
 		String mData=getPara("swys");
 		SWYS swys = JSON.parseObject(mData,SWYS.class);
-		swys.turnDB().update();
-		renderJson("{\"res\":\"修改成功\"}");
+		try{
+			swys.turnDB().update();
+			renderJson("{\"res\":\"修改成功\"}");
+		}catch(Exception e){
+			renderJson("{\"res\":\"修改失败\"}");
+		}
 	}
 	
 	/**
@@ -43,8 +47,12 @@ public class SWYSController extends Controller{
 	public void add(){
 		String mData=getPara("swys");
 		SWYS swys = JSON.parseObject(mData,SWYS.class);
-		swys.turnDB().save();
-		renderJson("{\"res\":\"插入成功\"}");
+		try{
+			swys.turnDB().save();
+			renderJson("{\"res\":\"插入成功\"}");
+		}catch(Exception e){
+			renderJson("{\"res\":\"插入失败\"}");
+		}
 	}
 	
 	/**
@@ -52,8 +60,12 @@ public class SWYSController extends Controller{
 	 */
 	public void drop(){
 		String ysdm = getPara("swys");
-		SWYS.dao.drop(ysdm);
-		renderJson("{\"res\":\"删除成功\"}");
+		try{
+			SWYS.dao.drop(ysdm);
+			renderJson("{\"res\":\"删除成功\"}");
+		}catch(Exception e){
+			renderJson("{\"res\":\"删除失败\"}");
+		}
 	}
 	
 	/**

@@ -19,8 +19,12 @@ public class CodeController extends Controller{
 	public void commitHL(){
 		String mData=getPara("hlmc");
 		HLMC hlmc = JSON.parseObject(mData,HLMC.class);
-		hlmc.turnDB().update();
-		renderJson("{\"res\":\"修改成功\"}");
+		try{
+			hlmc.turnDB().update();
+			renderJson("{\"res\":\"修改成功\"}");
+		}catch(Exception e){
+			renderJson("{\"res\":\"修改失败\"}");
+		}
 	}
 	
 	/**
@@ -29,8 +33,12 @@ public class CodeController extends Controller{
 	public void addHL(){
 		String mData=getPara("hlmc");
 		HLMC hlmc = JSON.parseObject(mData,HLMC.class);
-		hlmc.turnDB().save();
-		renderJson("{\"res\":\"插入成功\"}");
+		try{
+			hlmc.turnDB().save();
+			renderJson("{\"res\":\"插入成功\"}");
+		}catch(Exception e){
+			renderJson("{\"res\":\"插入失败\"}");
+		}
 	}
 	
 	/**
@@ -38,7 +46,11 @@ public class CodeController extends Controller{
 	 */
 	public void dropHL(){
 		String bshncd = getPara("hlmc");
-		HLMC.dao.drop(bshncd);
-		renderJson("{\"res\":\"删除成功\"}");
+		try{
+			HLMC.dao.drop(bshncd);
+			renderJson("{\"res\":\"删除成功\"}");
+		}catch(Exception e){
+			renderJson("{\"res\":\"删除失败\"}");
+		}
 	}
 }
