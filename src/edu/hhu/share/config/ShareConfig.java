@@ -14,6 +14,7 @@ import edu.hhu.share.controller.CodeController;
 import edu.hhu.share.controller.SWYSController;
 import edu.hhu.share.entities.HLMC;
 import edu.hhu.share.entities.SWYS;
+import edu.hhu.share.entities.XZQDM;
 
 public class ShareConfig extends JFinalConfig {
 
@@ -36,6 +37,7 @@ public class ShareConfig extends JFinalConfig {
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(cp);
 		arp.addMapping("SWYSB", "YSDM", SWYS.class);
 		arp.addMapping("HLMC", "BSHNCD", HLMC.class);
+		arp.addMapping("XZQDM", "ADDVCD", XZQDM.class);
 		me.add(arp);
 	}
 

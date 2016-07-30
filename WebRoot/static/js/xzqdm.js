@@ -1,4 +1,4 @@
-function hl_edit(e){
+function xzq_edit(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	if(btn.is('tr')){	//判断是新增条目还是已有条目
@@ -13,15 +13,15 @@ function hl_edit(e){
 		} 
 		if($(this).attr('edit') == "btn"){	//判断是新增条目还是已有条目
 			if(btn.is('tr')){
-				$(this).html('<button onclick="hl_insert(this);">插入</button>\n<button onclick="hl_delete(this);">退出</button>');
+				$(this).html('<button onclick="xzq_insert(this);">插入</button>\n<button onclick="xzq_delete(this);">退出</button>');
 			}else{
-				$(this).html('<button onclick="hl_save(this);">确认</button>\n<button onclick="hl_reload(this);">退出</button>');
+				$(this).html('<button onclick="xzq_save(this);">确认</button>\n<button onclick="xzq_reload(this);">退出</button>');
 			}
 		}
 	});
 }
 
-function hl_save(e){
+function xzq_save(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	var item = {};
@@ -39,7 +39,7 @@ function hl_save(e){
 			item[name] = text;
 		}
 		if(input.is('button')){
-			$(this).html('<button onclick="hl_edit(this);">编辑</button>\n<button onclick="hl_drop(this)">删除</button>')
+			$(this).html('<button onclick="xzq_edit(this);">编辑</button>\n<button onclick="xzq_drop(this)">删除</button>')
 		}
 	});
 	item = JSON.stringify(item);
@@ -47,25 +47,25 @@ function hl_save(e){
 	    type: "POST",
 	    cache: false,
 	    dataType:"json",
-	    url: "/codewh/commitHL/",
-	    data:{'hlmc':item},
+	    url: "/codewh/commitXZQ/",
+	    data:{'xzqdm':item},
 	    success : function(data,stau){
 	    	alert(data['res']);
 	    }
 	});
 }
-function hl_drop(e){
+function xzq_drop(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	tr.find('td').each(function (){
-		if($(this).attr('name') == 'BSHNCD'){
+		if($(this).attr('name') == 'ADDVCD'){
 			var text = $(this).text();
 			$.ajax({
 			    type: "POST",
 			    cache: false,
 			    dataType:"json",
-			    url: "/codewh/dropHL/",
-			    data:{'hlmc':text},
+			    url: "/codewh/dropXZQ/",
+			    data:{'xzqdm':text},
 			    success : function(data,stau){
 			    	alert(data['res']);
 			    }
@@ -75,7 +75,7 @@ function hl_drop(e){
 	});
 	tr.remove();
 }
-function hl_reload(e){
+function xzq_reload(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	tr.find('td').each(function (){
@@ -85,22 +85,22 @@ function hl_reload(e){
 			$(this).html(text);
 		}
 		if(input.is('button')){
-			$(this).html('<button onclick="hl_edit(this);">编辑</button>\n<button onclick="hl_drop(this)">删除</button>')
+			$(this).html('<button onclick="xzq_edit(this);">编辑</button>\n<button onclick="xzq_drop(this)">删除</button>')
 		}
 	});
 }
 
 
-function hl_add(){
+function xzq_add(){
 	var div = $('#new_item');
 	var oldhtml = div.html();
-	var newItem = '\n<tr>\n	<td edit="true" name="BSHNCD"></td>\n	<td edit="true" name="HNNM"></td>\n	<td edit="true" name="RVNM"></td>\n	<td edit="btn">\n    	<button onclick="hl_edit(this);">编辑</button>\n    	<button onclick="hl_drop(this)">删除</button>\n	</td>\n</tr>';
+	var newItem = '\n<tr>\n	<td edit="true" name="ADDVCD"></td>\n	<td edit="true" name="XZQMC"></td>\n	<td edit="btn">\n    	<button onclick="xzq_edit(this);">编辑</button>\n    	<button onclick="xzq_drop(this)">删除</button>\n	</td>\n</tr>';
 	div.append(newItem);
 	var div = $('#new_item');
 	var tr = div.find('tr').last();
-	hl_edit(tr);
+	xzq_edit(tr);
 }
-function hl_insert(e){
+function xzq_insert(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	var item = {};
@@ -110,7 +110,7 @@ function hl_insert(e){
 			var text = input.val();
 			var name = input.attr('name');
 			item[name] = text;
-			if(input.attr('name') == 'BSHNCD'){
+			if(input.attr('name') == 'ADDVCD'){
 				$(this).html(text);
 				$(this).attr('edit','false');
 			}else{
@@ -118,7 +118,7 @@ function hl_insert(e){
 			}
 		}
 		if(input.is('button')){
-			$(this).html('<button onclick="hl_edit(this);">编辑</button>\n<button onclick="hl_drop(this)">删除</button>')
+			$(this).html('<button onclick="xzq_edit(this);">编辑</button>\n<button onclick="xzq_drop(this)">删除</button>')
 		}
 	});
 	item = JSON.stringify(item);
@@ -126,14 +126,14 @@ function hl_insert(e){
 	    type: "POST",
 	    cache: false,
 	    dataType:"json",
-	    url: "/codewh/addHL/",
-	    data:{'hlmc':item},
+	    url: "/codewh/addXZQ/",
+	    data:{'xzqdm':item},
 	    success : function(data,stau){
 	    	alert(data['res']);
 	    }
 	});
 }
-function hl_delete(e){
+function xzq_delete(e){
 	var btn = $(e);
 	var tr = btn.parent().parent();
 	tr.remove();

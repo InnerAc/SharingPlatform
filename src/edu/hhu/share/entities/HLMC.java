@@ -29,7 +29,7 @@ public class HLMC extends Model<HLMC>{
 	}
 	
 	public boolean drop(String bshncd){
-		HLMC hlmc = dao.findById(bshncd);
+		HLMC hlmc = findById(bshncd);
 		return hlmc.delete();
 	}
 	
