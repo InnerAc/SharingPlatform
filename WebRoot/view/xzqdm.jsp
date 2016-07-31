@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
 <script src="/static/js/jquery-2.1.4.js"></script>
 <script src="/static/js/xzqdm.js"></script>
-<title>河道名称维护</title>
+<title>行政区代码表维护</title>
 </head>
 <body>
 	<div style="width:80%;margin:10%;">

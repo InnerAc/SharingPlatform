@@ -12,9 +12,14 @@ import com.jfinal.render.ViewType;
 
 import edu.hhu.share.controller.CodeController;
 import edu.hhu.share.controller.SWYSController;
+import edu.hhu.share.controller.ZLSQController;
 import edu.hhu.share.entities.HLMC;
+import edu.hhu.share.entities.HY_STSC_A;
+import edu.hhu.share.entities.SQB;
+import edu.hhu.share.entities.SQNRB;
 import edu.hhu.share.entities.SWYS;
 import edu.hhu.share.entities.XZQDM;
+import edu.hhu.share.entities.YSCZGX;
 
 public class ShareConfig extends JFinalConfig {
 
@@ -28,6 +33,7 @@ public class ShareConfig extends JFinalConfig {
 	public void configRoute(Routes me) {
 		me.add("/swyswh", SWYSController.class);
 		me.add("/codewh", CodeController.class);
+		me.add("/apply", ZLSQController.class);
 	}
 
 	@Override
@@ -38,6 +44,10 @@ public class ShareConfig extends JFinalConfig {
 		arp.addMapping("SWYSB", "YSDM", SWYS.class);
 		arp.addMapping("HLMC", "BSHNCD", HLMC.class);
 		arp.addMapping("XZQDM", "ADDVCD", XZQDM.class);
+		arp.addMapping("YSCZGX", "YSDM,STCD",YSCZGX.class );
+		arp.addMapping("SQB", "XH", SQB.class);
+		arp.addMapping("SQNRB", "XH,YSDM,STCD", SQNRB.class);
+		arp.addMapping("HY_STSC_A", "STCD", HY_STSC_A.class);
 		me.add(arp);
 	}
 
