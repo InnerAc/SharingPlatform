@@ -108,23 +108,17 @@
 		<div>
 			流域：
 			<select id="liuyuSelect" multiple="multiple">
-			    <option value="cheese">Cheese</option>
-			    <option value="tomatoes">Tomatoes</option>
-			    <option value="mozarella">Mozzarella</option>
-			    <option value="mushrooms">Mushrooms</option>
-			    <option value="pepperoni">Pepperoni</option>
-			    <option value="onions">Onions</option>
+			   <c:forEach items="${hlmcs}" var="hlmc">
+					<option value="${hlmc.BSHNCD }">${hlmc.BSHNCD }</option>
+				</c:forEach>
 			</select>
 			行政区划：
 			<select id="xzqSelect" multiple="multiple">
-			    <option value="cheese">Cheese</option>
-			    <option value="tomatoes">Tomatoes</option>
-			    <option value="mozarella">Mozzarella</option>
-			    <option value="mushrooms">Mushrooms</option>
-			    <option value="pepperoni">Pepperoni</option>
-			    <option value="onions">Onions</option>
+			    <c:forEach items="${xzqdms}" var="xzqdm">
+					<option value="${xzqdm.ADDVCD }" >${xzqdm.XZQMC }</option>
+				</c:forEach>
 			</select>
-			<button class="btn btn-success">筛选</button>
+			<button class="btn btn-success" onclick="stSelectClick();">筛选</button>
 		</div>
 		<div class="hang">
 			<table class="table table-bordered table-hover">
@@ -145,9 +139,9 @@
 			</table>
 		</div>
 		<div>
-			<button class="btn btn-warning">全选</button>
+			<button class="btn btn-warning" onclick="selectAll();">全选</button>
 			<button class="btn btn-danger" onclick="showTable();">退出</button>
-			<button class="btn btn-success">确认</button>
+			<button class="btn btn-success" onclick="commitST();" >确认</button>
 		</div>
 		</div>
 	</div>
@@ -163,7 +157,7 @@
 			<input id="startTime" name="startTime" type="text"/>
 			终止时间：
 			<input id="stopTime" name="stopTime" type="text"/>
-			<button class="btn btn-success" onclick="showTable();">确认</button>
+			<button class="btn btn-success" onclick="commitDate();">确认</button>
 		</div>
 		</div>
 	</div>

@@ -1,10 +1,13 @@
 package edu.hhu.share.entities;
 
+import java.util.List;
+
 import com.jfinal.plugin.activerecord.Model;
 
 public class HY_STSC_A extends Model<HY_STSC_A>{
 
 	private static final long serialVersionUID = 1L;
+	public static final HY_STSC_A dao = new HY_STSC_A();
 	
 	public String STCD;
 	public String STNM;
@@ -31,5 +34,26 @@ public class HY_STSC_A extends Model<HY_STSC_A>{
 		set("RVNM",RVNM);
 		set("ADDVCD",ADDVCD);
 		return this;
+	}
+	
+	public List<HY_STSC_A> selectByBSandADD(List<String> bshncds,List<String> addvcds){
+		String sql = "select * from HY_STSC_A where ";
+		String BSHNCD = "";
+		String ADDVCD = "";
+		for(String bs : bshncds){
+			BSHNCD += (" or BSHNCD='"+bs+"'");
+		}
+		BSHNCD = (BSHNCD.replaceFirst(" or ", "(") + ")");
+		
+		for(String add : addvcds){
+			ADDVCD += (" or ADDVCD='"+add+"'");
+		}
+		ADDVCD = (ADDVCD.replaceFirst(" or ", "(") + ")");
+		sql = sql+BSHNCD+" and "+ADDVCD;
+		try {
+			return find(sql);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }
