@@ -33,6 +33,61 @@ function showTable(){
 }
 
 /**
+ * 增加要素内容一个条目
+ */
+function addTR(){
+	var table = $('#yaosuneirong');
+	table.append('<tr>\n<td><input type="checkbox" /></td>\n<td name="YSDM"></td>\n<td name="STCD"></td>\n<td name="QSRQ"></td>\n<td name="ZZRQ"></td>\n</tr>');
+}
+
+/**
+ * 移除选中条目
+ */
+function rmTR(){
+	var res = getCheckedTr();
+	var n = res.length;
+	for(var i=0;i<n;i++){
+		res[i].remove();
+	}
+}
+
+function commitALL(){
+	//得到提交头
+	var DW = $('#DW').val();
+	var XM = $('#XM').val();
+	var DH = $('#DH').val();
+	var ZLYT = $('#ZLYT').val();
+	var RQ = (new Date().Format("yyyy-MM-dd"));
+	var XH = Math.round(new Date().getTime()/100)%140000000;	//我这儿仅仅是靠UNIX时间戳来创建随机id，可以后续更改
+	var sqb = {'DW':DW, 'XM':XM, 'DH':DH, 'ZLYT':ZLYT, 'RQ':RQ, 'XH':XH};
+	sqb = JSON.stringify(sqb);
+
+	//得到提交内容
+	
+	sqnrbs = [];
+	var content = $('#yaosuneirong');
+	content.find('tr').each(function (){
+		var tr = $(this).find('td');
+		var sqnrb = {'YSDM':$(tr[1]).text() ,  'STCD': $(tr[2]).text().split(',')[0],  'QSRQ': $(tr[3]).text(),  'ZZRQ': $(tr[4]).text()};
+		sqnrbs.push(sqnrb);
+	});
+	console.log(sqnrbs);
+	
+	sqnrbs = JSON.stringify(sqnrbs);
+	
+	$.ajax({
+	    type: "POST",
+	    cache: false,
+	    dataType:"json",
+	    url: "/apply/commit/",
+	    data:{'sqb':sqb,'sqnrbs':sqnrbs},
+	    success : function(data,stau){
+	    	alert(data['res']);
+	    }
+	});
+}
+
+/**
  * 得到申请内容中选中的tr
  * @returns {Array}
  */
@@ -164,8 +219,8 @@ function commitST(){
 
 //时段选择
 function commitDate(){
-	var startTime = $('#startTime').val();
-	var stopTime = $('#stopTime').val();
+	var startTime = $('#startTime').val()+':00';
+	var stopTime = $('#stopTime').val()+':00';
 	var ntrs = getCheckedTr();
 	var nn = ntrs.length;
 	for(var i=0;i<nn;i++){

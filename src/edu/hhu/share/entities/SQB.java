@@ -41,4 +41,76 @@ public class SQB extends Model<SQB>{
 		set("ZF",ZF);
 		return this;
 	}
+
+	public String getXH() {
+		return XH;
+	}
+
+	public void setXH(String xH) {
+		XH = xH;
+	}
+
+	public Date getRQ() {
+		return RQ;
+	}
+
+	public void setRQ(Date rQ) {
+		RQ = rQ;
+	}
+
+	public String getDW() {
+		return DW;
+	}
+
+	public void setDW(String dW) {
+		DW = dW;
+	}
+
+	public String getLX() {
+		return LX;
+	}
+
+	public void setLX(String lX) {
+		LX = lX;
+	}
+
+	public String getXM() {
+		return XM;
+	}
+
+	public void setXM(String xM) {
+		XM = xM;
+	}
+
+	public String getDH() {
+		return DH;
+	}
+
+	public void setDH(String dH) {
+		DH = dH;
+	}
+
+	public String getZLYT() {
+		return ZLYT;
+	}
+
+	public void setZLYT(String zLYT) {
+		ZLYT = zLYT;
+	}
+
+	public double getZF() {
+		return ZF;
+	}
+
+	public void setZF(double zF) {
+		ZF = zF;
+	}
+
+	@Override
+	public String toString() {
+		return "SQB [XH=" + XH + ", RQ=" + RQ + ", DW=" + DW + ", LX=" + LX
+				+ ", XM=" + XM + ", DH=" + DH + ", ZLYT=" + ZLYT + ", ZF=" + ZF
+				+ "]";
+	}
+	
 }

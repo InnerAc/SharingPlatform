@@ -31,4 +31,11 @@ public class SQNRB extends Model<SQNRB>{
 		set("ZZRQ",ZZRQ);
 		return this;
 	}
+	@Override
+	public String toString() {
+		return "SQNRB [XH=" + XH + ", YSDM=" + YSDM + ", STCD=" + STCD
+				+ ", QSRQ=" + QSRQ + ", ZZRQ=" + ZZRQ + "]";
+	}
+	
+	
 }

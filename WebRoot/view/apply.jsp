@@ -21,6 +21,7 @@
 <script type="text/javascript" src="/static/js/jquery-ui-timepicker-zh-CN.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/static/css/apply.css" />
+<script src="/static/js/util.js"></script>
 <script src="/static/js/apply.js"></script>
 
 <title>资料申请</title>
@@ -84,16 +85,16 @@
 			</div>
 			<div class="row hang">
 				<div class="col-md-3">
-					<button class="btn btn-primary">增加</button>
+					<button class="btn btn-primary" onclick="addTR();">增加</button>
 				</div>
 				<div class="col-md-3">
-					<button class="btn btn-danger">删除</button>
+					<button class="btn btn-danger" onclick="rmTR();">删除</button>
 				</div>
 				<div class="col-md-3">
 					<button class="btn btn-warning">取消</button>
 				</div>
 				<div class="col-md-3">
-					<button class="btn btn-success">提交申请</button>
+					<button class="btn btn-success" onclick="commitALL();">提交申请</button>
 				</div>
 			</div>
 		</div>
