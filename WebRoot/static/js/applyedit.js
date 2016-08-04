@@ -57,8 +57,8 @@ function commitALL(){
 	var XM = $('#XM').val();
 	var DH = $('#DH').val();
 	var ZLYT = $('#ZLYT').val();
-	var RQ = (new Date().Format("yyyy-MM-dd"));
-	var XH = Math.round(new Date().getTime()/100)%140000000;	//我这儿仅仅是靠UNIX时间戳来创建随机id，可以后续更改
+	var RQ = $('#RQ').text();;
+	var XH = $('#XH').text();
 	var sqb = {'DW':DW, 'XM':XM, 'DH':DH, 'ZLYT':ZLYT, 'RQ':RQ, 'XH':XH};
 	sqb = JSON.stringify(sqb);
 
@@ -81,7 +81,7 @@ function commitALL(){
 	    type: "POST",
 	    cache: false,
 	    dataType:"json",
-	    url: "/apply/commit/",
+	    url: "/apply/update/",
 	    data:{'sqb':sqb,'sqnrbs':sqnrbs},
 	    success : function(data,stau){
 	    	if(data['res']){

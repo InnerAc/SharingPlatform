@@ -52,6 +52,12 @@ public class SWYS extends Model<SWYS>{
 		return swys.delete();
 	}
 	
+	public double returnZF(String ysdm){
+		SWYS swys = SWYS.dao.findById(ysdm);
+		double x = swys.getDouble("ZF");
+		return x;
+	}
+	
 	public List<SWYS> findAll(){
 		List<SWYS> sysyss = null;
 		try {

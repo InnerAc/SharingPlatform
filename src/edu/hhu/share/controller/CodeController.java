@@ -3,12 +3,19 @@ package edu.hhu.share.controller;
 import java.util.List;
 
 import com.alibaba.fastjson.JSON;
+import com.jfinal.core.ActionKey;
 import com.jfinal.core.Controller;
 
 import edu.hhu.share.entities.HLMC;
 import edu.hhu.share.entities.XZQDM;
 
 public class CodeController extends Controller{
+	
+	@ActionKey("/")
+	public void index(){
+		render("/view/index.jsp");
+	}
+	
 	public void hlmc() {
 		List<HLMC> hlmcs = HLMC.dao.findAll();
 		setAttr("hlmcs", hlmcs);

@@ -8,9 +8,11 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.render.ViewType;
 
 import edu.hhu.share.controller.CodeController;
+import edu.hhu.share.controller.RecordFilesController;
 import edu.hhu.share.controller.SWYSController;
 import edu.hhu.share.controller.ZLSQController;
 import edu.hhu.share.entities.HLMC;
@@ -34,6 +36,7 @@ public class ShareConfig extends JFinalConfig {
 		me.add("/swyswh", SWYSController.class);
 		me.add("/codewh", CodeController.class);
 		me.add("/apply", ZLSQController.class);
+		me.add("/files", RecordFilesController.class);
 	}
 
 	@Override
@@ -49,11 +52,13 @@ public class ShareConfig extends JFinalConfig {
 		arp.addMapping("SQNRB", "XH,YSDM,STCD", SQNRB.class);
 		arp.addMapping("HY_STSC_A", "STCD", HY_STSC_A.class);
 		me.add(arp);
+		
+		me.add(new EhCachePlugin("src/ehcache.xml"));
 	}
 
 	@Override
 	public void configInterceptor(Interceptors me) {
-
+		
 	}
 
 	@Override

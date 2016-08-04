@@ -4,6 +4,8 @@ import java.util.Date;
 
 import com.jfinal.plugin.activerecord.Model;
 
+import edu.hhu.share.model.DateFormat;
+
 public class SQB extends Model<SQB>{
 
 	private static final long serialVersionUID = 1L;
@@ -40,6 +42,10 @@ public class SQB extends Model<SQB>{
 		set("ZLYT",ZLYT);
 		set("ZF",ZF);
 		return this;
+	}
+	
+	public SQBJSTL toJSTL(){
+		return new SQBJSTL(XH, DateFormat.format(RQ, 1), DW, LX, XM, DH, ZLYT, ZF);
 	}
 
 	public String getXH() {

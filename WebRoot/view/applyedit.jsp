@@ -22,7 +22,7 @@
 
 <link rel="stylesheet" type="text/css" href="/static/css/apply.css" />
 <script src="/static/js/util.js"></script>
-<script src="/static/js/apply.js"></script>
+<script src="/static/js/applyedit.js"></script>
 
 <title>资料申请</title>
 </head>
@@ -34,15 +34,15 @@
 		<div class="panel-body">
 			<div class="row form-inline">
 				申请单位：
-				<input type="text" class="form-control" id="DW"/>
+				<input type="text" class="form-control" id="DW" value="${sqb.DW}"/>
 				申请人：
-				<input type="text" class="form-control" id="XM"/>
+				<input type="text" class="form-control" id="XM" value="${sqb.XM}"/>
 				联系方式：
-				<input type="text" class="form-control" id="DH"/>
+				<input type="text" class="form-control" id="DH" value="${sqb.DH}"/>
 			</div>
 			<div class="row form-inline hang">
 				资料用途：
-				<textarea class="form-control" rows="3" id="ZLYT"></textarea>
+				<textarea class="form-control" rows="3" id="ZLYT">${sqb.ZLYT }</textarea>
 			</div>
 			<div class="row form-inline hang">
 				<div class="col-md-6">
@@ -72,13 +72,15 @@
 			        </tr>
 			      </thead>
 			      <tbody  id="yaosuneirong">
-			        <tr>
+			        <c:forEach items="${sqnrbs}" var="sqnrb">
+					<tr>
 			        	<td><input type="checkbox" /></td>
-						<td name="YSDM"></td>
-						<td name="STCD"></td>
-						<td name="QSRQ"></td>
-						<td name="ZZRQ"></td>
+						<td name="YSDM">${sqnrb.YSDM },${sqnrb.YSMC }</td>
+						<td name="STCD">${sqnrb.STINFO }</td>
+						<td name="QSRQ">${sqnrb.QSRQ }</td>
+						<td name="ZZRQ">${sqnrb.ZZRQ }</td>
 			        </tr>
+					</c:forEach>
 			      </tbody>
 				</table> 
 
@@ -162,7 +164,10 @@
 		</div>
 		</div>
 	</div>
-	
+	<div style="display:none;">
+		<h6 id="XH">${sqb.XH }</h6>
+		<h6 id="RQ">${sqb.RQ }</h6>
+	</div>
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#liuyuSelect').multiselect({

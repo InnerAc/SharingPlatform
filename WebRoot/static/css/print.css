@@ -1,0 +1,34 @@
+.print_neirong {
+	border-style:solid;
+	border-width: 1px;
+	font-size : 20px;
+	padding-bottom :10px;
+}
+
+.print_content{
+	padding-left : 10px;
+	padding-right : 10px;
+}
+.cell_left {
+	border-style:solid;
+	border-width: 1px 0 0 1px;
+}
+.cell_right {
+	border-style:solid;
+	border-width: 1px 1px 0 1px;
+}
+.cell_midd {
+	border-style:solid;
+	border-width: 0 1px 0 1px;
+}
+.cell_bottom{
+	border-style:solid;
+	border-bottom-width: 1px;
+}
+.cell_box{
+	border-style:solid;
+	border-width: 1px;
+}
+.font_center{
+	text-align:center
+}
