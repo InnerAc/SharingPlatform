@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
 <script src="/static/js/jquery-2.1.4.js"></script>
 <script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/files.js"></script>
 
 <title>资料归档</title>
 </head>
@@ -54,7 +55,7 @@
 				</div>
 				<div class="col-md-3">
 					<h2 style="text-align:center">新增站点</h2>
-					<select multiple class="form-control" style="height:250px">
+					<select multiple class="form-control" style="height:250px" id="add_sts">
 						<option>水文</option>
 						<option>水资源</option>
 						<option>防办</option>
@@ -64,16 +65,24 @@
 					<div class="row" style="margin-top:10px">
 						<div class="col-md-2"></div>
 						<div class="col-md-3">
-							<button class="btn btn-info">增加</button>
+							<button class="btn btn-info" id="add" onclick="show(this);">增加</button>
 						</div>
 						<div class="col-md-3">
-							<button class="btn btn-danger">删除</button>
+							<button class="btn btn-danger" id="add" onclick="rmClick(this);">删除</button>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;display:none;" id="add_show">
+						<div class="col-md-8">
+							<input id="add_st" type="text" class="form-control"/>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-info"  id="add"  onclick="addClick(this)">确认</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<h2 style="text-align:center">去掉站点</h2>
-					<select multiple class="form-control" style="height:250px">
+					<select multiple class="form-control" style="height:250px" id="dll_sts">
 						<option>水文</option>
 						<option>水资源</option>
 						<option>防办</option>
@@ -83,10 +92,18 @@
 					<div class="row" style="margin-top:10px">
 						<div class="col-md-2"></div>
 						<div class="col-md-3">
-							<button class="btn btn-info">增加</button>
+							<button class="btn btn-info" id="dll" onclick="show(this);">增加</button>
 						</div>
 						<div class="col-md-3">
-							<button class="btn btn-danger">删除</button>
+							<button class="btn btn-danger" id="dll" onclick="rmClick(this);">删除</button>
+						</div>
+					</div>
+					<div class="row" style="margin-top:10px;display:none;" id="dll_show">
+						<div class="col-md-8">
+							<input id="dll_st" type="text" class="form-control"/>
+						</div>
+						<div class="col-md-4">
+							<button class="btn btn-info"  id="dll"  onclick="addClick(this)">确认</button>
 						</div>
 					</div>
 				</div>

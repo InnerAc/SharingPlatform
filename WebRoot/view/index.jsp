@@ -21,6 +21,7 @@
 		<a href="/codewh/hlmc">河流名称表维护</a>
 		<a href="/codewh/xzqdm">行政区代码维护</a>
 		<a href="/apply/query">行政区代码维护</a>
+		<a href="/files">资料归档</a>
 	</div>
 	</div>
 </body>
