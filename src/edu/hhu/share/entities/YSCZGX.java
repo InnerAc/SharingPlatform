@@ -1,5 +1,7 @@
 package edu.hhu.share.entities;
 
+import java.util.List;
+
 import com.jfinal.plugin.activerecord.Model;
 
 public class YSCZGX extends Model<YSCZGX>{
@@ -23,5 +25,13 @@ public class YSCZGX extends Model<YSCZGX>{
 		set("STCD", STCD);
 		set("BM", BM);
 		return this;
+	}
+	
+	public List<YSCZGX> findByYear(String year,String ysdm){
+		List<YSCZGX> ysczgxs = null;
+		String sql = "select * from YSCZGX where YSDM='"+ysdm+"' and SUBSTR(BM,-4,4)='"+year+"'";
+		ysczgxs = find(sql);
+		return ysczgxs;
+		
 	}
 }

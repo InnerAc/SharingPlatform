@@ -22,45 +22,40 @@
 			<div class="row">
 				<div class="col-md-2">年份选择：</div>
 				<div class="col-md-3">
-					<select class="form-control">
-						<option>2012</option>
-						<option>2013</option>
-						<option>2014</option>
-						<option>2015</option>
-						<option>2016</option>
+					<select class="form-control" id="nfSelect">
+						<option value="2011">2012</option>
+						<option value="2012">2013</option>
+						<option value="2013">2014</option>
+						<option value="2014">2015</option>
+						<option value="2015">2016</option>
 					</select>
 				</div>
 				<div class="col-md-2">要素选择：</div>
 				<div class="col-md-3">
-					<select class="form-control">
+					<select class="form-control" id="ysSelect">
 						<c:forEach items="${swyss}" var="swys">
 							<option value="${swys.YSDM }">${swys.YSMC }</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div class="col-md-2">
-					<button class="btn btn-default">筛选</button>
+					<button class="btn btn-default" onclick="select();">筛选</button>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-3">
 					<h2 style="text-align:center">上一年站点</h2>
-					<select multiple class="form-control" style="height:250px">
-						<option>水文</option>
-						<option>水资源</option>
-						<option>防办</option>
-						<option>河道局</option>
-						<option>小湾</option>
+					<select multiple class="form-control" style="height:250px" id="old_sts">
 					</select>
+					<div class="row" style="margin-top:10px">
+						<center>
+						<button class="btn btn-warning" onclick="rmST();">去掉</button>
+						</center>
+					</div>
 				</div>
 				<div class="col-md-3">
 					<h2 style="text-align:center">新增站点</h2>
 					<select multiple class="form-control" style="height:250px" id="add_sts">
-						<option>水文</option>
-						<option>水资源</option>
-						<option>防办</option>
-						<option>河道局</option>
-						<option>小湾</option>
 					</select>
 					<div class="row" style="margin-top:10px">
 						<div class="col-md-2"></div>
@@ -73,7 +68,7 @@
 					</div>
 					<div class="row" style="margin-top:10px;display:none;" id="add_show">
 						<div class="col-md-8">
-							<input id="add_st" type="text" class="form-control"/>
+							<input id="add_st" type="text" class="form-control" placeholder="只输入测站代码"/>
 						</div>
 						<div class="col-md-4">
 							<button class="btn btn-info"  id="add"  onclick="addClick(this)">确认</button>
@@ -83,11 +78,6 @@
 				<div class="col-md-3">
 					<h2 style="text-align:center">去掉站点</h2>
 					<select multiple class="form-control" style="height:250px" id="dll_sts">
-						<option>水文</option>
-						<option>水资源</option>
-						<option>防办</option>
-						<option>河道局</option>
-						<option>小湾</option>
 					</select>
 					<div class="row" style="margin-top:10px">
 						<div class="col-md-2"></div>
@@ -100,7 +90,7 @@
 					</div>
 					<div class="row" style="margin-top:10px;display:none;" id="dll_show">
 						<div class="col-md-8">
-							<input id="dll_st" type="text" class="form-control"/>
+							<input id="dll_st" type="text" class="form-control" placeholder="只输入测站代码"/>
 						</div>
 						<div class="col-md-4">
 							<button class="btn btn-info"  id="dll"  onclick="addClick(this)">确认</button>
