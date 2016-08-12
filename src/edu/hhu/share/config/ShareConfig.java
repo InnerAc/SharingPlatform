@@ -41,7 +41,7 @@ public class ShareConfig extends JFinalConfig {
 
 	@Override
 	public void configPlugin(Plugins me) {
-		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://192.168.218.128/splatform","root", "anjicun");
+		C3p0Plugin cp = new C3p0Plugin("jdbc:mysql://192.168.218.129/splatform","root", "anjicun");
 		me.add(cp);
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(cp);
 		arp.addMapping("SWYSB", "YSDM", SWYS.class);

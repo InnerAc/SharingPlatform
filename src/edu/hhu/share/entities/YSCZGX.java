@@ -34,4 +34,47 @@ public class YSCZGX extends Model<YSCZGX>{
 		return ysczgxs;
 		
 	}
+	
+	/**
+	 * 将去年已有的站点需要今年归档的更新日期数据
+	 * @param year
+	 * @return
+	 */
+	public boolean record(String year){
+		turnJAVA();
+		String bm = this.BM;
+		int n = bm.length();
+		System.out.println("befor = "+n);
+		if(n > 4 && bm.charAt(n-5) == '-'){
+			this.BM = bm.substring(0, n-4) + year;
+		}else{
+			this.BM = bm + '-'+year;
+		}
+		turnDB();
+		return update();
+	}
+	
+	/**
+	 * 创建新的归档记录或者将已有的记录更新日期
+	 * @param ysdm
+	 * @param stid
+	 * @param year
+	 * @return
+	 */
+	public boolean newOrEdit(String ysdm,String stid,String year){
+		try {
+			YSCZGX ysczgx = findById(ysdm,stid);
+			ysczgx.turnJAVA();
+			ysczgx.BM = ysczgx.BM + "," + year;
+			ysczgx.turnDB();
+			return ysczgx.update();
+		} catch (Exception e) {
+			YSCZGX ysczgx = new YSCZGX();
+			ysczgx.BM = year;
+			ysczgx.YSDM = ysdm;
+			ysczgx.STCD = stid;
+			ysczgx.turnDB();
+			return ysczgx.save();
+		}
+	}
 }

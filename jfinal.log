@@ -1798,3 +1798,809 @@ Caused by: java.lang.NumberFormatException: For input string: "2016-8-3"
 	at Fastjson_ASM_SQB_1.deserialze(Unknown Source)
 	at com.alibaba.fastjson.parser.DefaultJSONParser.parseObject(DefaultJSONParser.java:551)
 	... 35 more
+
+2016-08-10 16:33:50
+[ERROR]-[Thread: qtp2008017533-24]-[com.jfinal.core.ActionHandler.handle()]: /files/jsonST/
+java.lang.IllegalArgumentException: The parameter object can not be null.
+	at com.jfinal.render.JsonRender.<init>(JsonRender.java:116)
+	at com.jfinal.render.RenderFactory.getJsonRender(RenderFactory.java:202)
+	at com.jfinal.core.Controller.renderJson(Controller.java:1034)
+	at edu.hhu.share.controller.RecordFilesController.jsonST(RecordFilesController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-08-12 09:23:57
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+
+2016-08-12 09:23:57
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@2b4a2ec7
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@51931956
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@564718df
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@51b7e5df
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@18a70f16
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@62e136d3
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@c8e4bb0
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@6279cee3
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@4206a205
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@29ba4338
+Pool thread stack traces:
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+
+
+2016-08-12 09:24:37
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+
+2016-08-12 09:24:37
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3080248c
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@45f67b50
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@6776573e
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@2a55c2d3
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7fcfbf00
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@9957752
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@380086a8
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3c478821
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3ef21716
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@1cffd87d
+Pool thread stack traces:
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+		sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+
+
+2016-08-12 09:25:17
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+
+2016-08-12 09:25:17
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@77f293ee
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7e5a14c2
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@4b2968ce
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@5222ff0b
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7cf00d89
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7c9f75c1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@1f91f45f
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@5a0e8a01
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@266e588c
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@21d800fd
+Pool thread stack traces:
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+
+
+2016-08-12 09:26:07
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+
+2016-08-12 09:26:07
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7304a823
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@47969cc7
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@121bfb97
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@24744f53
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@697edf09
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3fed27b5
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@4ceee42b
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@4ae62432
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@55ff2cf0
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3f97975
+Pool thread stack traces:
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+
+
+2016-08-12 09:26:47
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+
+2016-08-12 09:26:47
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@67c66254
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@27e80200
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@20e8bc8e
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@2c509e65
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@49b94bad
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@1d39540c
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7a26ada9
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@52ada73e
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@51ca7ae5
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@684dde4
+Pool thread stack traces:
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+
+
+2016-08-12 09:27:27
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+
+2016-08-12 09:27:27
+[WARN]-[Thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-AdminTaskTimer]-[com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$WarnLogger.log()]: com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@577bab44 -- APPARENT DEADLOCK!!! Complete Status: 
+	Managed Threads: 3
+	Active Threads: 3
+	Active Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@21c6c67e
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@283add71
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@491477c6
+			on thread: C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2
+	Pending Tasks: 
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@5a180a36
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@3058ecf4
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@27ba39b7
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@5915a964
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@43c641ca
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@348e3a0a
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@428fcaad
+Pool thread stack traces:
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#2,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#0,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Thread[C3P0PooledConnectionPoolManager[identityToken->1hge13k9iyi2jmz16grejo|42eca56e]-HelperThread-#1,5,main]
+		java.net.DualStackPlainSocketImpl.connect0(Native Method)
+		java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+		java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+		java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+		java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+		java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+		java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+		java.net.Socket.connect(Socket.java:589)
+		java.net.Socket.connect(Socket.java:538)
+		java.net.Socket.<init>(Socket.java:434)
+		java.net.Socket.<init>(Socket.java:244)
+		com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+		com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+		com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2391)
+		com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+		com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+		com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+		com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+		sun.reflect.GeneratedConstructorAccessor5.newInstance(Unknown Source)
+		sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+		java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+		com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+		com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+		com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+		com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1138)
+		com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1125)
+		com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1870)
+		com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+

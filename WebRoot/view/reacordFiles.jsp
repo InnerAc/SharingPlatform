@@ -104,10 +104,10 @@
 					<br>
 					<br>
 					<br>
-					<button class="btn btn-info">确认</button>
+					<button class="btn btn-info" onclick="commit();">确认</button>
 					<br>
 					<br>
-					<button class="btn btn-danger">退出</button>
+					<a class="btn btn-danger" href="/" >退出</a>
 				</center>	
 				</div>
 			</div>
