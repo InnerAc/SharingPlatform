@@ -14,6 +14,7 @@ import com.jfinal.render.ViewType;
 import edu.hhu.share.controller.CodeController;
 import edu.hhu.share.controller.RecordFilesController;
 import edu.hhu.share.controller.SWYSController;
+import edu.hhu.share.controller.StatisticsController;
 import edu.hhu.share.controller.ZLSQController;
 import edu.hhu.share.entities.HLMC;
 import edu.hhu.share.entities.HY_STSC_A;
@@ -37,6 +38,7 @@ public class ShareConfig extends JFinalConfig {
 		me.add("/codewh", CodeController.class);
 		me.add("/apply", ZLSQController.class);
 		me.add("/files", RecordFilesController.class);
+		me.add("/stat", StatisticsController.class);
 	}
 
 	@Override

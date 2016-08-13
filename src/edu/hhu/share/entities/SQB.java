@@ -1,6 +1,7 @@
 package edu.hhu.share.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import com.jfinal.plugin.activerecord.Model;
 
@@ -42,6 +43,20 @@ public class SQB extends Model<SQB>{
 		set("ZLYT",ZLYT);
 		set("ZF",ZF);
 		return this;
+	}
+	
+	public List<SQB> findAll(){
+		return find("select * from SQB");
+	}
+	
+	public List<SQB> findByYear(String year){
+		String sql ="SELECT * from SQB where RQ like'"+year+"%'";
+		try {
+			return find(sql);
+		} catch (Exception e) {
+			return null;
+		}
+		
 	}
 	
 	public SQBJSTL toJSTL(){
