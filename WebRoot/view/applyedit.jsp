@@ -12,14 +12,6 @@
 
 <link href="/static/css/bootstrap-multiselect.css" rel="stylesheet"/>
 <script src="/static/js/bootstrap-multiselect.js"></script>
-
-
-<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css" />
-<script type="text/javascript" src="/static/js/jquery-ui-1.10.4.custom.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery.ui.datepicker-zh-CN.js"></script>
-<script type="text/javascript" src="/static/js/jquery-ui-timepicker-addon.js"></script>
-<script type="text/javascript" src="/static/js/jquery-ui-timepicker-zh-CN.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/static/css/apply.css" />
 <script src="/static/js/util.js"></script>
 <script src="/static/js/applyedit.js"></script>

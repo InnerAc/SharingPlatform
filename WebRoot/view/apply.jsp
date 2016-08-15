@@ -14,11 +14,6 @@
 <script src="/static/js/bootstrap-multiselect.js"></script>
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css" />
-<script type="text/javascript" src="/static/js/jquery-ui-1.10.4.custom.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery.ui.datepicker-zh-CN.js"></script>
-<script type="text/javascript" src="/static/js/jquery-ui-timepicker-addon.js"></script>
-<script type="text/javascript" src="/static/js/jquery-ui-timepicker-zh-CN.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/static/css/apply.css" />
 <script src="/static/js/util.js"></script>
@@ -49,7 +44,7 @@
 					要素选择：
 					<select class="form-control" id="yaosuxuanze">
 						<c:forEach items="${swyss}" var="swys">
-							<option>${swys.YSDM },${swys.YSMC }</option>
+							<option>${swys.YSDM },${swys.YSMC },${swys.LX }</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -148,19 +143,182 @@
 	</div>
 	
 	<!-- 日期选择 -->
+
+	<div id="dateSelect" class="panel panel-success" style="width:50%;margin:10% 25% auto 25%;">
+	<!-- 
 	<div id="dateSelect" class="panel panel-success" style="width:50%;margin:10% 25% auto 25%;display:none;">
+ -->
 		<div class="panel-heading">
 			<h3 class="panel-title">日期选择</h3>
 		</div>
 		<div class="panel-body">
-		<div>
-			起始时间：
-			<input id="startTime" name="startTime" type="text"/>
-			终止时间：
-			<input id="stopTime" name="stopTime" type="text"/>
-			<button class="btn btn-success" onclick="commitDate();">确认</button>
+		<div class="row">
+			<div class="col-xs-3">起始时间：</div>
+			<div class="col-xs-2" id="div_st_year">
+				<select class="form-control" id="st_year">
+				  <option>2011</option>
+				  <option>2012</option>
+				  <option>2013</option>
+				  <option>2014</option>
+				  <option>2015</option>
+				</select>
+			</div>
+			<div class="col-xs-1">
+				年
+			</div>
+			<div class="col-xs-3" id="div_st_month" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_month">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				  <option>6</option>
+				  <option>7</option>
+				  <option>8</option>
+				  <option>9</option>
+				  <option>10</option>
+				  <option>11</option>
+				  <option>12</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					月
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_st_day" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_day">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					日
+				</div>
+			</div>
 		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-3" id="div_st_hour" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_hour">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					时
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_st_minute" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_minute">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					分
+				</div>
+			</div>
 		</div>
+		<br><br>
+				<div class="row">
+			<div class="col-xs-3">终止时间：</div>
+			<div class="col-xs-2" id="div_en_year">
+				<select class="form-control" id="st_year">
+				  <option>2011</option>
+				  <option>2012</option>
+				  <option>2013</option>
+				  <option>2014</option>
+				  <option>2015</option>
+				</select>
+			</div>
+			<div class="col-xs-1">
+				年
+			</div>
+			<div class="col-xs-3" id="div_en_month" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_month">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				  <option>6</option>
+				  <option>7</option>
+				  <option>8</option>
+				  <option>9</option>
+				  <option>10</option>
+				  <option>11</option>
+				  <option>12</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					月
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_en_day" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_day">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					日
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-3" id="div_en_hour" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_hour">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					时
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_en_minute" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_minute">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					分
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-success" onclick="commitDate();">确认</button>
+	</div>
 	</div>
 	
 	<script type="text/javascript">
@@ -173,7 +331,6 @@
 				includeSelectAllOption: true,
 				enableFiltering: true
 	        });
-	        $( "input[name='startTime'],input[name='stopTime']" ).datetimepicker({format: 'yyyy:mm:dd'});
 	    });
 </script>
 </body>

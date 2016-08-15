@@ -15,14 +15,42 @@ function stClick(){
  */
 function dateClick(){
 	var ntrs = getCheckedTr();
-	if(ntrs.length == 0){
-		alert('请选中一个或多个内容');
+	if(ntrs.length != 1){
+		alert('请只选中一个内容');
+		return;
+	}
+	var ystd = $(ntrs[0].find('td')[1]);
+	var text = ystd.text();
+	if(text == ""){
+		alert('请先选择要素');
 		return;
 	}
 	$("#dateSelect").fadeIn(300);
 	$("#applyTable").fadeOut(300);
+	showDate(text.split(',')[2]);
 }
 
+/**
+ * 根据类型选择不同的日期
+ * @param lx
+ */
+function showDate(lx){
+	var key = Number(lx);
+	if(key < 5){
+		$('#div_st_month').show();
+		$('#div_en_month').show();
+		if(key < 4){
+			$('#div_st_day').show();
+			$('#div_en_day').show();
+		}
+		if(key == 1){
+			$('#div_st_hour').show();
+			$('#div_en_hour').show();
+			$('#div_st_minute').show();
+			$('#div_en_minute').show();
+		}
+	}
+}
 /**
  * 关闭弹窗
  */
