@@ -41,7 +41,7 @@
 					要素选择：
 					<select class="form-control" id="yaosuxuanze">
 						<c:forEach items="${swyss}" var="swys">
-							<option>${swys.YSDM },${swys.YSMC }</option>
+							<option>${swys.YSDM },${swys.YSMC },${swys.LX }</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -67,7 +67,7 @@
 			        <c:forEach items="${sqnrbs}" var="sqnrb">
 					<tr>
 			        	<td><input type="checkbox" /></td>
-						<td name="YSDM">${sqnrb.YSDM },${sqnrb.YSMC }</td>
+						<td name="YSDM">${sqnrb.YSDM },${sqnrb.YSMC },${sqnrb.LX }</td>
 						<td name="STCD">${sqnrb.STINFO }</td>
 						<td name="QSRQ">${sqnrb.QSRQ }</td>
 						<td name="ZZRQ">${sqnrb.ZZRQ }</td>
@@ -147,13 +147,205 @@
 			<h3 class="panel-title">日期选择</h3>
 		</div>
 		<div class="panel-body">
-		<div>
-			起始时间：
-			<input id="startTime" name="startTime" type="text"/>
-			终止时间：
-			<input id="stopTime" name="stopTime" type="text"/>
-			<button class="btn btn-success" onclick="commitDate();">确认</button>
+			<div class="row">
+			<div class="col-xs-3">起始时间：</div>
+			<div class="col-xs-2" id="div_st_year">
+				<select class="form-control" id="st_year">
+				  <option>2011</option>
+				  <option>2012</option>
+				  <option>2013</option>
+				  <option>2014</option>
+				  <option>2015</option>
+				</select>
+			</div>
+			<div class="col-xs-1">
+				年
+			</div>
+			<div class="col-xs-3" id="div_st_month" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_month">
+				  <option>01</option>
+				  <option>02</option>
+				  <option>03</option>
+				  <option>04</option>
+				  <option>05</option>
+				  <option>06</option>
+				  <option>07</option>
+				  <option>08</option>
+				  <option>09</option>
+				  <option>10</option>
+				  <option>11</option>
+				  <option>12</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					月
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_st_day" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_day">
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					日
+				</div>
+			</div>
 		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-3" id="div_st_hour" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_hour">
+				</select>
+				</div>
+				<div class="col-xs-4">
+					时
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_st_minute" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="st_minute">
+				</select>
+				</div>
+				<div class="col-xs-4">
+					分
+				</div>
+			</div>
+		</div>
+		<br><br>
+				<div class="row">
+			<div class="col-xs-3">终止时间：</div>
+			<div class="col-xs-2" id="div_en_year">
+				<select class="form-control" id="en_year">
+				  <option>2011</option>
+				  <option>2012</option>
+				  <option>2013</option>
+				  <option>2014</option>
+				  <option>2015</option>
+				</select>
+			</div>
+			<div class="col-xs-1">
+				年
+			</div>
+			<div class="col-xs-3" id="div_en_month" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="en_month">
+				  <option>01</option>
+				  <option>02</option>
+				  <option>03</option>
+				  <option>04</option>
+				  <option>05</option>
+				  <option>06</option>
+				  <option>07</option>
+				  <option>08</option>
+				  <option>09</option>
+				  <option>10</option>
+				  <option>11</option>
+				  <option>12</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					月
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_en_day" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="en_day">
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					日
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-3" id="div_en_hour" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="en_hour">
+				  <option>5</option>
+				</select>
+				</div>
+				<div class="col-xs-4">
+					时
+				</div>
+			</div>
+			<div class="col-xs-3" id="div_en_minute" style="display:none;">
+				<div class="col-xs-8">
+				<select class="form-control" id="en_minute">
+				</select>
+				</div>
+				<div class="col-xs-4">
+					分
+				</div>
+			</div>
+		</div>
+			<button class="btn btn-success" onclick="commitDate();">确认</button>
 		</div>
 	</div>
 	<div style="display:none;">
@@ -170,7 +362,6 @@
 				includeSelectAllOption: true,
 				enableFiltering: true
 	        });
-	        $( "input[name='startTime'],input[name='stopTime']" ).datetimepicker({format: 'yyyy:mm:dd'});
 	    });
 </script>
 </body>

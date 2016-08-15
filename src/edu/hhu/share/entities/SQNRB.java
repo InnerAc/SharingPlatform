@@ -21,6 +21,7 @@ public class SQNRB extends Model<SQNRB>{
 	
 	public String YSMC;
 	public String STINFO;
+	public String LX;
 	
 	public SQNRB turnJAVA(){
 		XH = getStr("XH");
@@ -41,14 +42,16 @@ public class SQNRB extends Model<SQNRB>{
 	
 	public SQNRB turnExcel(){
 		turnJAVA();
-		this.YSMC = SWYS.dao.findById(this.YSDM).getStr("YSMC");
+		SWYS swys = SWYS.dao.findById(this.YSDM);
+		this.YSMC = swys.getStr("YSMC");
+		this.LX = swys.getStr("LX");
 		this.STINFO = this.STCD+","+HY_STSC_A.dao.findById(this.STCD).getStr("STNM");
 		
 		return this;
 	}
 	
 	public SQNRBJSTL toJSTL(){
-		SQNRBJSTL sq = new SQNRBJSTL(DateFormat.format(QSRQ), DateFormat.format(ZZRQ), YSMC	, STINFO,YSDM);
+		SQNRBJSTL sq = new SQNRBJSTL(DateFormat.format(QSRQ), DateFormat.format(ZZRQ), YSMC	, STINFO,YSDM,LX);
 		return sq;
 	}
 	

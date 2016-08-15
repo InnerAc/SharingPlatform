@@ -6,13 +6,23 @@ public class SQNRBJSTL {
 	public String ZZRQ;
 	public String YSMC;
 	public String STINFO;
+	public String LX;
 	
-	public SQNRBJSTL(String q,String z,String y,String s,String ys){
+	public String getLX() {
+		return LX;
+	}
+
+	public void setLX(String lX) {
+		LX = lX;
+	}
+
+	public SQNRBJSTL(String q,String z,String y,String s,String ys,String lx){
 		QSRQ = q;
 		ZZRQ = z;
 		YSMC = y;
 		STINFO = s;
 		YSDM = ys;
+		LX = lx;
 	}
 
 	public String getQSRQ() {
