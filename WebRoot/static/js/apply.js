@@ -318,6 +318,11 @@ function commitST(){
 function commitDate(){
 	var startTime = $('#st_year').val()+'-'+$('#st_month').val()+'-'+$('#st_day').val()+' '+$('#st_hour').val()+':'+$('#st_minute').val()+':00';
 	var stopTime = $('#en_year').val()+'-'+$('#en_month').val()+'-'+$('#en_day').val()+' '+$('#en_hour').val()+':'+$('#en_minute').val()+':00';
+	if(isHefa(startTime,stopTime)){
+		alert("终止日期请大于起始日期！！")
+		return;
+	}
+	
 	var ntrs = getCheckedTr();
 	var nn = ntrs.length;
 	for(var i=0;i<nn;i++){
@@ -364,4 +369,17 @@ function monthToday(e){
 			day.append('<option>'+i+'</option>');
 		}
 	}
+}
+/**
+ * 判断日期是否合法
+ * @param st
+ * @param en
+ * @returns {Boolean}
+ */
+function isHefa(st,en){
+	st = st.replace(/-/g,"/");
+	en = en.replace(/-/g,"/");
+	st = new Date(st);
+	en = new Date(en);
+	return en<=st;
 }

@@ -144,10 +144,7 @@
 	
 	<!-- 日期选择 -->
 
-	<div id="dateSelect" class="panel panel-success" style="width:50%;margin:10% 25% auto 25%;">
-	<!-- 
 	<div id="dateSelect" class="panel panel-success" style="width:50%;margin:10% 25% auto 25%;display:none;">
- -->
 		<div class="panel-heading">
 			<h3 class="panel-title">日期选择</h3>
 		</div>
