@@ -59,6 +59,10 @@ public class ZLSQController extends Controller{
 				sqnrb.turnDB().save();
 				sqnrb.turnExcel();
 			}
+			//单位类型目前为随机
+			int lx = (int) (Math.random()+1.5);
+			sqbi.setLX(String.valueOf(lx));
+			//单位类型随机结束，生产环境请删除
 			sqbi.setZF(zfs);
 			sqbi.turnDB().save();
 			HashMap<String, Object> res = new HashMap<>();
