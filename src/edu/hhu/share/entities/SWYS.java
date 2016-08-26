@@ -55,8 +55,15 @@ public class SWYS extends Model<SWYS>{
 	public double returnZF(String ysdm){
 		SWYS swys = SWYS.dao.findById(ysdm);
 		double x = swys.getDouble("ZF");
-		if(swys.getStr("LX") == "1"){	//这里是为了使要素类型为1时不计算资费，所有才这么写的
+		String lx = swys.getStr("LX");
+		if(lx.equals("1")){	//这里是为了使要素类型为1时不计算资费，所有才这么写的
 			x = 0;
+		}
+		if(lx.equals("4")){
+			x = x/30;
+		}
+		if(lx.equals("5")){
+			x = x/365;
 		}
 		return x;
 	}

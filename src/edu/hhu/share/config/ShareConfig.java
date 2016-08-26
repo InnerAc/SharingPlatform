@@ -23,6 +23,7 @@ import edu.hhu.share.entities.SQNRB;
 import edu.hhu.share.entities.SWYS;
 import edu.hhu.share.entities.XZQDM;
 import edu.hhu.share.entities.YSCZGX;
+import edu.hhu.share.model.PathUtil;
 
 public class ShareConfig extends JFinalConfig {
 
@@ -54,8 +55,8 @@ public class ShareConfig extends JFinalConfig {
 		arp.addMapping("SQNRB", "XH,YSDM,STCD", SQNRB.class);
 		arp.addMapping("HY_STSC_A", "STCD", HY_STSC_A.class);
 		me.add(arp);
-		
-		me.add(new EhCachePlugin("src/ehcache.xml"));
+		System.out.println(PathUtil.projectPath);
+		me.add(new EhCachePlugin(PathUtil.projectPath+"/ehcache.xml"));
 	}
 
 	@Override

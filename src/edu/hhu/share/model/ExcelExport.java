@@ -25,7 +25,7 @@ public class ExcelExport {
 			List<SQNRB> sqnrbs) throws BiffException, IOException, RowsExceededException, WriteException {  
         File os = new File(xhid+".xls");
         os.createNewFile();
-		String tempalteFile = "WebRoot\\tempalte.xls";
+		String tempalteFile = PathUtil.projectPath+"\\tempalte.xls";
         // 获取模板  
         Workbook templatebook = Workbook.getWorkbook(new File(tempalteFile)); 
         WritableWorkbook wwb = Workbook.createWorkbook(os, templatebook);
